@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить врача</title>
+</head>
+<body>
+    <h1>Добавить врача</h1>
+    <form method="POST" action="/add_doctor">
+        <label for="first_name">Имя:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="last_name">Фамилия:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="specialization">Специальность:</label>
+        <select id="specialization" name="specialization" required>
+            <option value="">Выбор специальности</option>
+            <option value="1">Кардиолог</option>
+            <option value="2">Невролог</option>
+            <option value="3">Дерматолог</option>
+            <option value="4">Педиатр</option>
+            <option value="5">ЛОР</option>
+            <option value="6">Офтальмолог</option>
+        </select><br>
+
+        <button type="submit">Добавить врача</button>
+    </form>
+    <a href="{{ url_for('index') }}">Главная страница</a>
+</body>
+</html>

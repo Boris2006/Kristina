@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить визит</title>
+</head>
+<body>
+    <h1>Добавить визит</h1>
+    <form action="/add_visit" method="POST">
+        Пациент:
+<select name="patient_id">
+    {% for patient in patients %}
+        <option value="{{ patient.patient_id }}">{{ patient.first_name }} {{ patient.last_name }}</option>
+    {% endfor %}
+</select><br>
+Врач:
+<select name="doctor_id">
+    {% for doctor in doctors %}
+        <option value="{{ doctor.doctor_id }}">{{ doctor.first_name }} {{ doctor.last_name }}</option>
+    {% endfor %}
+</select><br>
+
+        Дата визита: <input type="date" name="visit_date"><br>
+        <button type="submit">Добавить визит</button>
+    </form>
+    <a href="{{ url_for('index') }}">Главная страница</a>
+</body>
+</html>

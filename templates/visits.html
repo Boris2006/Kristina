@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визиты</title>
+</head>
+<body>
+    <h1>Визиты</h1>
+    <ul>
+        {% for visit in visits %}
+            <li>Пациент: {{ visit.patient.first_name }} {{ visit.patient.last_name }},
+                Врач: {{ visit.doctor.first_name }} {{ visit.doctor.last_name }},
+                Дата: {{ visit.visit_datetime }}
+                <a href="/delete_visit/{{ visit.visit_id }}">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/add_visit">Добавить новый визит</a>
+    <a href="{{ url_for('index') }}">Главная страница</a>
+</body>
+</html>

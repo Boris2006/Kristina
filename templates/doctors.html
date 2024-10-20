@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Врачи</title>
+</head>
+<body>
+    <h1>Врачи</h1>
+    <ul>
+        {% for doctor in doctors %}
+            <li>{{ doctor.first_name }} {{ doctor.last_name }}
+                <a href="/delete_doctor/{{ doctor.doctor_id }}">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/add_doctor">Добавить нового врача</a>
+    <a href="{{ url_for('index') }}">Главная страница</a>
+</body>
+</html>

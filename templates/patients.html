@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все пациенты</title>
+</head>
+<body>
+    <h1>Все пациенты</h1>
+    <ul>
+        {% for patient in patients %}
+        <li>{{ patient.first_name }} {{ patient.last_name }} (DOB: {{ patient.date_of_birth }}) 
+            <a href="{{ url_for('delete_patient', id=patient.patient_id) }}">Удалить</a>
+        </li>     
+        {% endfor %}
+    </ul>
+    <a href="/add_patient">Добавить нового пациента</a>
+    <a href="{{ url_for('index') }}">Главная страница</a>
+</body>
+</html>

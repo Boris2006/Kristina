@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить пациента</title>
+</head>
+<body>
+    <h1>Добавить пациента</h1>
+    <form action="/add_patient" method="POST">
+        <label for="first_name">Имя:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="last_name">Фамилия:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="gender">Пол:</label>
+        <select id="gender" name="gender" required>
+            <option value="M">Муж</option>
+            <option value="F">Жен</option>
+        </select><br>
+
+        <label for="dob">Дата рождения:</label>
+        <input type="date" id="dob" name="dob" required><br>
+
+        <input type="submit" value="Добавить пациента">
+    </form>
+    <a href="{{ url_for('index') }}">Главная страница</a>
+</body>
+</html>

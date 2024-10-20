@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медицинский центр</title>
+</head>
+<body>
+    <h1>Медицинский центр</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('add_doctor') }}">Добавить врача</a></li>
+            <li><a href="{{ url_for('add_patient') }}">Добавить пациента</a></li>
+            <li><a href="{{ url_for('add_visit') }}">Добавить визит</a></li>
+            <li><a href="{{ url_for('doctors') }}">Все врачи</a></li>
+            <li><a href="{{ url_for('patients') }}">Все пациенты</a></li>
+            <li><a href="{{ url_for('visits') }}">Все визиты</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
